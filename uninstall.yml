@@ -1,0 +1,10 @@
+---
+### Playbook for Zabbix removal
+
+- hosts: all
+  user: root
+  vars_files:
+  - vars/zabbix_variables.yml
+  tasks:
+  - include: tasks/remove.yml
+

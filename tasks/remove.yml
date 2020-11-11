@@ -1,0 +1,20 @@
+---
+### Clean remove of all zabbix repo, pkg,config and logs on zabbix-agent host.
+### 
+
+- debug:
+    msg: "Clean remove of all zabbix repo, pkg,config and logs on  server {{ hostname }} "
+
+- name: remove zabbix repo and packages.
+  action: shell systemctl stop zabbix-agent; systemctl disable zabbix-agent; systemctl daemon-reload; rm /usr/sbin/zabbix_agentd ; rm /usr/bin/zabbix_get ; rm /usr/bin/zabbix_sender; rm /lib/systemd/system/zabbix-agent.service;
+
+- name: Delete /etc/zabbix dir
+  file:
+    state: absent
+    path:  /etc/zabbix
+
+- name: Delete zabbix log files.
+  file:
+    state: absent
+    path:  /var/log/zabbix
+

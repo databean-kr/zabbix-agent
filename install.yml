@@ -1,0 +1,18 @@
+---
+### Playbook for Zabbix Installs
+
+- hosts: all
+  user: root
+  vars_files:
+  - vars/zabbix_variables.yml
+  tasks:
+  - include: tasks/install_tasks.yml
+  handlers:
+  - name: handler_restart_zabbix_agentd
+    service:
+      name: zabbix-agent
+      state: restarted
+
+###  - include: tasks/managepkgs_tasks.yml
+###  - include: tasks/autoadd_tasks.yml
+  
