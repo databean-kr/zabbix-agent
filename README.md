@@ -15,6 +15,8 @@ ansible-playbook -vvv uninstall.yml -i example/inventory.yaml
 
 ## DIRECTORY 구조
 
+| 파일                    | 설명                       |
+| ---------------------- | ------------------------- |
 | example/inventory.yaml | 테스트를 위하여 생성한 인벤토리 |
 | hosts                  | 호스트 정보: 현재 사용하지 않음 |
 | install.yml            | 설치 설정 파일 |
