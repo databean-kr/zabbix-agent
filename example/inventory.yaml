@@ -2,5 +2,5 @@ all:
   hosts:
     poc
   vars:
-    hostname: 'hello'
+    hostname: 'databean-dev'
     
